@@ -67,9 +67,9 @@ public class PetUtils {
         if (list_petSkill == null) {
             list_petSkill = getAllPetSkill();
         }
-        for (PetSkill pet : list_petSkill) {
-            if (pet.getType() == type) {
-                return pet;
+        for (int i = 0;i<list_petSkill.size(); i++) {
+            if (list_petSkill.get(i).getType() == type) {
+                return list_petSkill.get(i);
             }
         }
         return null;
