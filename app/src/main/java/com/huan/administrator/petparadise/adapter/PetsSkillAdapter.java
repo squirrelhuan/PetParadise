@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.huan.administrator.petparadise.R;
 import com.huan.administrator.petparadise.bean.PetSkill;
+import com.huan.administrator.petparadise.constant.PetEnum;
 import com.huan.administrator.petparadise.utils.FileUtils;
 
 import java.util.List;
@@ -62,13 +63,13 @@ public class PetsSkillAdapter extends BaseAdapter {
         PetSkill petSkill = mList.get(position);
         String petHeadName = "petskill/"+petSkill.getHeadImage();
         switch (petSkill.getSkillClass()){
-            case PetSkill.PetSkillClass.Low:
+            case PetEnum.PetSkillClass.Low:
                 viewHolder.iv_head.setImageDrawable(mContext.getResources().getDrawable(R.drawable.pet_skill_low_bg));
                 break;
-            case PetSkill.PetSkillClass.High:
+            case PetEnum.PetSkillClass.High:
                 viewHolder.iv_head.setImageDrawable(mContext.getResources().getDrawable(R.drawable.pet_skill_high_bg));
                 break;
-            case PetSkill.PetSkillClass.None:
+            case PetEnum.PetSkillClass.None:
                 viewHolder.iv_head.setImageDrawable(mContext.getResources().getDrawable(R.drawable.pet_skill_high_bg));
                 break;
         }

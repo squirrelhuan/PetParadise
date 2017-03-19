@@ -47,9 +47,5 @@ public class PetSkill implements Serializable{
         SkillClass = skillClass;
     }
 
-    public interface PetSkillClass{
-        int Low = 1;
-        int High = 2;
-        int None = 3;
-    }
+
 }
