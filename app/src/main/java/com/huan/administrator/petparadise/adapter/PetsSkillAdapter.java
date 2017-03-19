@@ -1,6 +1,9 @@
 package com.huan.administrator.petparadise.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +11,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.huan.administrator.petparadise.R;
-import com.huan.administrator.petparadise.bean.Pet;
 import com.huan.administrator.petparadise.bean.PetSkill;
 import com.huan.administrator.petparadise.utils.FileUtils;
 
@@ -63,6 +65,13 @@ public class PetsSkillAdapter extends BaseAdapter {
         PetSkill petSkill = mList.get(position);
         String petHeadName = "petskill/"+petSkill.getHeadImage();
         viewHolder.iv_head.setImageDrawable(FileUtils.loadImageFromAsserts(petHeadName));
+
+        BitmapDrawable bitmapDrawable = (BitmapDrawable) mContext.getResources().getDrawable(R.drawable.ui_set_01);
+        //BitmapDrawable bitmapDrawable=(BitmapDrawable)imageview1.getDrawable();
+        int x = 50,y = 50,width = 100,height = 100;
+        Bitmap bitmap = Bitmap.createBitmap(bitmapDrawable.getBitmap(),x,y,width,height);
+        Drawable drawable = new BitmapDrawable(bitmap);
+        viewHolder.iv_head.setBackgroundDrawable(drawable);
 
         return convertView;
     }
