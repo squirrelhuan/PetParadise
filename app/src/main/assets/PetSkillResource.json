@@ -5,13 +5,18 @@
     "type": 0
   },
   {
-    "headImage": "xixue.png",
-    "skillClass": 1,
-    "type": 0
+    "headImage": "zhaojia.png",
+    "skillClass": 0,
+    "type": 1
   },
   {
-    "headImage": "xixue.png",
-    "skillClass": 2,
-    "type": 0
+    "headImage": "gaojitouxi.png",
+    "skillClass": 1,
+    "type": 2
+  },
+  {
+    "headImage": "gaojifangyu.png",
+    "skillClass": 1,
+    "type": 3
   }
 ]

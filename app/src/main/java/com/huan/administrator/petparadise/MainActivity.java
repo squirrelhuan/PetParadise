@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
             List<PetSkill> skills = new ArrayList<PetSkill>();
             for (int j=0;j<count_skill;j++){
                 PetSkill petSkill = new PetSkill();
-                //petSkill = PetUtils.getPetSkillByType(i);
-                petSkill.setHeadImage("xixue.png");
-                petSkill.setSkillClass(j%3);
+                petSkill = PetUtils.getPetSkillByType(i%4);
+                //petSkill.setHeadImage("xixue.png");
+                //petSkill.setSkillClass(j%3);
                 skills.add(petSkill);
             }
             String aaa = JSON.toJSON(skills).toString();
