@@ -1,10 +1,12 @@
 package com.huan.administrator.petparadise.bean;
 
+import java.io.Serializable;
+
 /**
  * 宠物技能
  * Created by Administrator on 2017/3/18.
  */
-public class PetSkill {
+public class PetSkill implements Serializable{
     private int Type;
     /**
      * 低级，高级，无等级
