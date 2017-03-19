@@ -1,9 +1,6 @@
 package com.huan.administrator.petparadise.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,7 +52,7 @@ public class PetsSkillAdapter extends BaseAdapter {
         if(convertView==null){
             viewHolder=new ViewHolder();
 
-            convertView = mInflater.inflate(R.layout.item_pet_head, null);
+            convertView = mInflater.inflate(R.layout.item_pet_skill, null);
             viewHolder.iv_head = (ImageView) convertView.findViewById(R.id.iv_head);
             convertView.setTag(viewHolder);
         }else{
@@ -64,14 +61,18 @@ public class PetsSkillAdapter extends BaseAdapter {
 
         PetSkill petSkill = mList.get(position);
         String petHeadName = "petskill/"+petSkill.getHeadImage();
-        viewHolder.iv_head.setImageDrawable(FileUtils.loadImageFromAsserts(petHeadName));
-
-        BitmapDrawable bitmapDrawable = (BitmapDrawable) mContext.getResources().getDrawable(R.drawable.ui_set_01);
-        //BitmapDrawable bitmapDrawable=(BitmapDrawable)imageview1.getDrawable();
-        int x = 1686,y = 495,width = 100,height = 100;
-        Bitmap bitmap = Bitmap.createBitmap(bitmapDrawable.getBitmap(),x,y,width,height);
-        Drawable drawable = new BitmapDrawable(bitmap);
-        viewHolder.iv_head.setBackgroundDrawable(drawable);
+        switch (petSkill.getSkillClass()){
+            case PetSkill.PetSkillClass.Low:
+                viewHolder.iv_head.setImageDrawable(mContext.getResources().getDrawable(R.drawable.pet_skill_low_bg));
+                break;
+            case PetSkill.PetSkillClass.High:
+                viewHolder.iv_head.setImageDrawable(mContext.getResources().getDrawable(R.drawable.pet_skill_high_bg));
+                break;
+            case PetSkill.PetSkillClass.None:
+                viewHolder.iv_head.setImageDrawable(mContext.getResources().getDrawable(R.drawable.pet_skill_high_bg));
+                break;
+        }
+        viewHolder.iv_head.setBackgroundDrawable(FileUtils.loadImageFromAsserts(petHeadName));
 
         return convertView;
     }

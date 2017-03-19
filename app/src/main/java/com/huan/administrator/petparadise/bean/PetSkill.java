@@ -6,6 +6,10 @@ package com.huan.administrator.petparadise.bean;
  */
 public class PetSkill {
     private int Type;
+    /**
+     * 低级，高级，无等级
+     */
+    private int SkillClass;
     private String HeadImage;
     private String Name;
 
@@ -31,5 +35,19 @@ public class PetSkill {
 
     public void setHeadImage(String headImage) {
         HeadImage = headImage;
+    }
+
+    public int getSkillClass() {
+        return SkillClass;
+    }
+
+    public void setSkillClass(int skillClass) {
+        SkillClass = skillClass;
+    }
+
+    public interface PetSkillClass{
+        int Low = 1;
+        int High = 2;
+        int None = 3;
     }
 }
