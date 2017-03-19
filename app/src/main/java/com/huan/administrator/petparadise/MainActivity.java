@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 petSkill.setSkillClass(j%3);
                 skills.add(petSkill);
             }
-            String aaa = skills.toString();
+            String aaa = JSON.toJSON(skills).toString();
             p.setSkills(skills);
             pets.add(p);
         }
