@@ -68,7 +68,7 @@ public class PetsSkillAdapter extends BaseAdapter {
 
         BitmapDrawable bitmapDrawable = (BitmapDrawable) mContext.getResources().getDrawable(R.drawable.ui_set_01);
         //BitmapDrawable bitmapDrawable=(BitmapDrawable)imageview1.getDrawable();
-        int x = 50,y = 50,width = 100,height = 100;
+        int x = 1686,y = 495,width = 100,height = 100;
         Bitmap bitmap = Bitmap.createBitmap(bitmapDrawable.getBitmap(),x,y,width,height);
         Drawable drawable = new BitmapDrawable(bitmap);
         viewHolder.iv_head.setBackgroundDrawable(drawable);
